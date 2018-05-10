@@ -20,10 +20,26 @@ def downloadVideos():
       print("\nDownloads will saved into -> " + directory + "\n")
       for l in links:
         YouTube(l).streams.first().download(directory)
+        print(l + " " + "Saved to " + directory)
   except Exception as message:
     print(message)
 
 def main():
+
+  print("""
+ __     __      _______    _                                                           
+ \ \   / /     |__   __|  | |                                                          
+  \ \_/ /__  _   _| |_   _| |__   ___                                                  
+   \   / _ \| | | | | | | | '_ \ / _ \                                                 
+    | | (_) | |_| | | |_| | |_) |  __/                                                 
+  __|_|\___/ \__,_|_|\__,_|_.__/_\___|                   _                 _           
+ |  _ \      | |     | |     |  __ \                    | |               | |          
+ | |_) | __ _| |_ ___| |__   | |  | | _____      ___ __ | | ___   __ _  __| | ___ _ __ 
+ |  _ < / _` | __/ __| '_ \  | |  | |/ _ \ \ /\ / / '_ \| |/ _ \ / _` |/ _` |/ _ \ '__|
+ | |_) | (_| | || (__| | | | | |__| | (_) \ V  V /| | | | | (_) | (_| | (_| |  __/ |   
+ |____/ \__,_|\__\___|_| |_| |_____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|\___|_|   
+  """)
+
   while True:
     read = input(str("(S)ingle download or (B)atch download ? "))
     if read.lower() == "s":
